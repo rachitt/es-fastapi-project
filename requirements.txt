@@ -112,7 +112,7 @@ nest-asyncio==1.5.6
 networkx==3.1
 notebook==6.5.4
 notebook_shim==0.2.3
-numpy=1.23.3
+numpy==1.23.3
 oauthlib==3.2.2
 openai==0.27.8
 opencv-contrib-python==4.7.0.72
