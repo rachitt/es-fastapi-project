@@ -2,6 +2,8 @@ import pickle
 from pydantic import BaseModel
 from fastapi import FastAPI
 import json
+from fastapi import Request, WebSocket
+from fastapi.security import OAuth2PasswordBearer
 
 app=FastAPI()
 class model_input(BaseModel):
@@ -44,4 +46,11 @@ def prediction(input_parameters: model_input):
     else:
         print("Transported:True")
     
-    
+
+
+class CustomOAuth2PasswordBearer(OAuth2PasswordBearer):
+    async def __call__(self, request: Request = None, websocket: WebSocket = None):
+        return await super().__call__(request or websocket)
+
+
+oauth2_scheme = CustomOAuth2PasswordBearer(tokenUrl="login")
