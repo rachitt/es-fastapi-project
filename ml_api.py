@@ -20,7 +20,6 @@ class model_input(BaseModel):
     VRDeck:float
 
 model=pickle.load(open('Spaceship_kaggle.sav','rb'))
-@app.get("/")
 @app.post('/spaceship_ss')
 def prediction(input_parameters: model_input):
     input_data=input_parameters.json()
