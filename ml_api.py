@@ -47,10 +47,12 @@ def prediction(input_parameters: model_input):
         print("Transported:True")
     
 
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
 
-class CustomOAuth2PasswordBearer(OAuth2PasswordBearer):
-    async def __call__(self, request: Request = None, websocket: WebSocket = None):
-        return await super().__call__(request or websocket)
-
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: Optional[str] = None):
+    return {"item_id": item_id, "q": q}
 
 oauth2_scheme = CustomOAuth2PasswordBearer(tokenUrl="login")
