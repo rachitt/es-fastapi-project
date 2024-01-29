@@ -13,6 +13,7 @@ six==1.14.0
 scikit-learn==1.2.2
 starlette
 uvicorn
+typing
 websocket
 wrapt
 uvloop
