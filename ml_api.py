@@ -3,8 +3,7 @@ from pydantic import BaseModel
 from fastapi import FastAPI
 from typing import Optional
 import json
-from fastapi import Request, WebSocket
-from fastapi.security import OAuth2PasswordBearer
+
 
 app=FastAPI()
 class model_input(BaseModel):
@@ -56,4 +55,4 @@ async def root():
 def read_item(item_id: int, q: Optional[str] = None):
     return {"item_id": item_id, "q": q}
 
-oauth2_scheme = CustomOAuth2PasswordBearer(tokenUrl="login")
+
