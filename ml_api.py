@@ -1,6 +1,7 @@
 import pickle
 from pydantic import BaseModel
 from fastapi import FastAPI
+from typing import Optional
 import json
 from fastapi import Request, WebSocket
 from fastapi.security import OAuth2PasswordBearer
