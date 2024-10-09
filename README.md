@@ -1,5 +1,5 @@
 
-# ES FastAPI Project
+# FastAPI Project
 
 This repository contains a project that demonstrates the integration of **Elasticsearch** with **FastAPI**, a modern Python web framework. The project enables the creation, indexing, and querying of documents in Elasticsearch through a FastAPI-based RESTful API.
 
